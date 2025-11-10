@@ -1,21 +1,78 @@
-body {
-  ont-family: "Karma", sans-serif;
+body { 
+  font-family: "karma", sans-serif;
   margin: 0;
-  color: #333;
-  background: white;
-  margin-left: 50px;
-  margin-right: 50px;
+  background: #fff;
+  line-height: 1.5;
+  padding-left: 8px;
+  padding-right: 8px;
+ 
 }
 
 
-/* Header */
+.topbar {
+  font-family: "Times New Roman",Georgia,serif;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  font-size: 30px;
+  top: 0;
+  padding-bottom: 18px;
+
+}
+
+.menu-btn {
+  font-size: 20px;
+  cursor: pointer;
+  text-decoration: none;
+
+}
+
+.mail {
+  text-decoration: none;
+  font-size: 18px;
+
+}
+
+.sidebar {
+  display: none;
+  position: fixed;
+  top: 0;
+  right: -250px;
+  width: 250px;
+  height: 100%;
+  background-color: white;
+  box-shadow: -2px 0.4s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar a,
+.sidebar  .closebtn {
+  padding: 15px 25px;
+  font-size: 20px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+
+#menu-toggle:checked  .sidebar {
+  right: 0;
+}
+
+#menu-toggle:checked  .content {
+  opacity: 0.4s;
+  transition: opacity 0.4s;
+  
+}
+/* Top navigation  */
 .topnav {
+  font-family: "karma"sans-serif;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 15px 20px;
   background: white;
-  border-bottom: 1px solid #ddd;
   position: sticky;
   top: 0;
   z-index: 10;
@@ -24,51 +81,34 @@ body {
 .topnav h1 {
   font-weight: normal;
   margin: 0;
-}
-
-.menu {
-  font-size: 24px;
-  cursor: pointer;
-}
-
-.mail {
-  color: #000;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-/* Hidden Checkbox for menu toggle */
-#menu-toggle {
-  display: none;
+  font-size: 22px;
 }
 
 
-/* Dropdown Menu */
+
+/* Dropdown menu */
 .dropdown {
-  top: 58px;
+  display: none;
+  flex-direction: column;
+  background: #fff;
+  position: absolute;
+  top: 60px;
   left: 0;
   width: 100%;
-  display: none; 
-  z-index: 2; 
-  width: 40%;
-   min-width: 300px;
+  opacity: 0;
+  transform: translateY(-15px);
+  transition: all 0.3s ease;
 }
+
 
 .dropdown a {
   padding: 14px 20px;
-  border-top: 1px solid #eee;
   text-decoration: none;
   color: #000;
-  text-align: left;
 }
 
 .dropdown a:hover {
   background: #f0f0f0;
-}
-
-/* Show dropdown when checkbox checked */
-#menu-toggle:checked  .menu  h1  .mail + .dropdown {
-  display: flex;
 }
 .powered em {
    font-family: "Georgia", serif;
@@ -94,6 +134,10 @@ body {
 
 .gallery h3 {
   margin: 10px 0 5px;
+  font-size: 24px;
+  font-weight: 400;
+  font-family: "Karma", sans-serif;
+   
 }
 
 .gallery p {
@@ -104,6 +148,8 @@ body {
 .pagination {
   text-align: center;
   margin: 30px 0;
+  
+  
 }
 
 .pagination a {
@@ -123,31 +169,33 @@ body {
   background: #ddd;
 }
 
+
 /* About Section */
 .about {
   text-align: center;
   padding: 40px 20px;
   background: white;
   margin: 20px;
-  border-radius: 6px;
   border-top: 1px solid #e0dcdc;
+  
 }
 
+
 .about img {
-  width: 100%;
+  width: 200%;
   max-width: 600px;
-  border-radius: 6px;
   margin-top: 10px;
 }
 
 /* Footer */
 footer {
   display: flex;
+  flex-direction: row;
   flex-wrap: wrap;
-  justify-content: space-around;
   padding: 40px 10%;
   text-align: left;
   border-top: 1px solid #e0dcdc;
+ font-family: 'Times New Roman',Georgia,serif ;
 }
 
 .footer-box {
@@ -172,7 +220,6 @@ footer {
 
 .post {
   display: flex;
-  align-items: center;
   margin: 20px 0;
 }
 
@@ -187,16 +234,25 @@ footer {
 .tags {
   display: flex;
   flex-wrap: wrap;
-  gap: 6px;
   flex-direction: row;
+   gap: 10px;
+  row-gap: 16px;
   color: white;
+  font-size: 20px;
+  padding-bottom: 16px;
+  padding-top: 16px;
+  font-family: 'Times New Roman',Georgia,serif ;
+
+
 }
 
-.tag {
+.tag  {
   background:rgb(110, 109, 109);
   padding: 6px 10px;
   font-size: 13px;
 }
+
+
 
 .tag.active {
   background: black;
